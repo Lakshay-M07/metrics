@@ -4,3 +4,24 @@ on:
   schedule:
     - cron: "0 0 * * *"
   workflow_dispatch:
+
+jobs:
+  github-metrics:
+    runs-on: ubuntu-latest
+    environment:
+      name: production
+    permissions:
+      contents: write
+    steps:
+      - name: Generate GitHub Metrics
+        uses: Lakshay-M07/metrics@master
+        with:
+          token: ${{ secrets.METRICS_TOKEN }}
+          user: Lakshay-M07
+          output_action: commit
+          filename: github-metrics.svg
+          config_theme: github_dark
+
+          
+        
+           
