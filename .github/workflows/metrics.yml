@@ -20,6 +20,7 @@ jobs:
           user: Lakshay-M07
           output_action: commit
           filename: github-metrics.svg
+          config_footer: no
 
           
       - name: Introduction
